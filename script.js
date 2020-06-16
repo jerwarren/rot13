@@ -34,3 +34,9 @@ function rot13me(message){
 		return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
 	});
 };
+
+function getUrl(message){
+    pattern = /.*(https*:\/\/[^\s]*)/;
+    newMessage = message.replace(pattern,'\$1');
+    return newMessage;
+}
