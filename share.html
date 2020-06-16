@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="share cleaner">
+        <title>Share Cleaner</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#c5ea53">
+        <link rel="icon" type="image/png" href="icon.png" />
+        <link rel="apple-touch-icon" href="icon.png">
+        <link rel="apple-touch-startup-image" href="icon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    </head>
+    <body>
+        <style>
+            label, textarea {
+                width: 90%;
+                margin-left: 5%;
+            }
+        </style>
+
+        <label for="text">Incoming Share Text</label>
+        <textarea id="text"></textarea>
+        <br><br>
+
+        <label for="output">rot13 processed</label>
+        <textarea id="output" contenteditable></textarea>
+        <br><br>
+        <button id="button">Share Cleaned Text</button>
+
+    <script src="script.js"></script>
+    </body>
+
+
+

@@ -1,0 +1,25 @@
+
+{
+  "name": "Share Cleaner",
+  "short_name": "Share Cleaner",
+  "start_url": "/share-url-cleaner/index.html",
+  "display": "standalone",
+  "theme_color": "#c5ea53",
+  "background_color":"#ddacf6",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "share_target": {
+    "action": "/share-url-cleaner/share.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
