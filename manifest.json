@@ -1,8 +1,8 @@
 
 {
-  "name": "Share Cleaner",
-  "short_name": "Share Cleaner",
-  "start_url": "/share-url-cleaner/index.html",
+  "name": "rot13me",
+  "short_name": "rot13me",
+  "start_url": "/rot13/share.html",
   "display": "standalone",
   "theme_color": "#c5ea53",
   "background_color":"#ddacf6",
@@ -14,12 +14,10 @@
     }
   ],
   "share_target": {
-    "action": "/share-url-cleaner/share.html",
+    "action": "/rot13/share.html",
     "method": "GET",
     "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
+      "text": "text"
     }
   }
 }
