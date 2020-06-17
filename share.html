@@ -14,23 +14,51 @@
     </head>
     <body>
         <style>
-            label, textarea {
-                width: 90%;
-                margin-left: 5%;
-                height: 200px;
+            body {
+                font-family: Roboto, "Segoe UI", Calibri, sans-serif;
+            }
+            
+            #output {
+                width: auto;
+                margin-left: 0px;
+                margin-right: 0px;
+                height: auto;
+                background-color:rgba(0,0,0,1);
+                color: white;
+                border: 1px solid rgba(255,255,255,0.5);
+                border-radius: 5px;
+                padding: 20px;
+            }
+            .label {
+                margin-left: 0px;
+                margin-right: 0px;
+                height: auto;
+                background-color:rgba(0,0,0,1);
+                color: white;
+                text-transform: uppercase;
+                text-align: center;
+            }
+            body {
+                background-color: rgb(0,0,0,1);
             }
         </style>
+        <blockquote class="twitter-tweet" data-conversation="none" data-dnt="true" data-theme="dark">
+            <p lang="en" dir="ltr"></p><a href=""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+        </script>
 
-        <label for="text">Incoming Share Text</label>
-        <textarea id="text"></textarea>
+        <textarea id="text" style="display:none;"></textarea>
         <br><br>
 
-        <label for="output">rot13 processed</label>
-        <textarea id="output" contenteditable></textarea>
+        <div class="label">rot13 processed</div>
+        <div id="output"></div>
         <br><br>
-        <button id="button">Share Cleaned Text</button>
 
     <script src="script.js"></script>
+    <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+        }
+    </script>
     </body>
 
 
