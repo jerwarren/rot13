@@ -4,8 +4,8 @@
   "short_name": "tweet rot13",
   "start_url": "/rot13/share.html",
   "display": "standalone",
-  "theme_color": "#c5ea53",
-  "background_color":"#ddacf6",
+  "theme_color": "#000000",
+  "background_color":"#000000",
   "icons": [
     {
       "src": "icon.png",
