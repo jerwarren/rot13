@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="share cleaner">
-        <title>Share Cleaner</title>
+        <title>rot13 tweet</title>
         <link rel="manifest" href="manifest.json">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#c5ea53">
@@ -16,8 +16,9 @@
         <style>
             body {
                 font-family: Roboto, "Segoe UI", Calibri, sans-serif;
+                background-color: rgb(27, 27, 27);
             }
-            
+
             #output {
                 width: auto;
                 margin-left: 0px;
@@ -32,16 +33,38 @@
             .label {
                 margin-left: 0px;
                 margin-right: 0px;
+                maegin-bottom: 0;
+                font-size: 16px;
+                font-weight: 700;
                 height: auto;
-                background-color:rgba(0,0,0,1);
+                background-color:rgba(0,0,0,0);
                 color: white;
                 text-transform: uppercase;
                 text-align: center;
             }
-            body {
-                background-color: rgb(0,0,0,1);
+
+            h1 {
+                margin-bottom: 0px;
+                font-size: 3em;
+                font-weight: 100;
+                text-align: center;
+                width: 100%;
+                margin-top: 0px;
             }
+            .fancy {
+                color: white;
+                font-weight: 900;
+            }
+
+            .tweet {
+                color: #55acee;
+                font-style: italic;
+            }
+
         </style>
+        <h1>
+            <span class="fancy">rot13</span>&nbsp;<span class="tweet">Tweet</span>
+        </h1>
         <blockquote class="twitter-tweet" data-conversation="none" data-dnt="true" data-theme="dark">
             <p lang="en" dir="ltr"></p><a href=""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
         </script>
