@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (shareText !== null)
         document.querySelector('#output').innerHTML = rot13me(shareText);
 
-    getUrl(rot13me(shareText));
+        populateTweet(getUrl(rot13me(shareText)));
 
 });
 
