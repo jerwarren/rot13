@@ -4,6 +4,8 @@ if('serviceWorker' in navigator) {
 
 const tweetUrl = document.querySelector('#tweetUrl');
 const tootUrl = document.querySelector('.mastodon-embed');
+const text = document.querySelector('#text');
+const output = document.querySelector('#output');
 
 window.addEventListener('DOMContentLoaded', () => {
     const parsedUrl = new URL(window.location);
@@ -11,13 +13,15 @@ window.addEventListener('DOMContentLoaded', () => {
     // searchParams.get() will properly handle decoding the values.
     shareText = parsedUrl.searchParams.get('text');
     
-    if (shareText !== null)
+    /* if (shareText !== null)
         document.querySelector('#text').innerHTML = shareText;
 
     if (shareText !== null)
         document.querySelector('#output').innerHTML = splitLines(rot13me(shareText));
+ */
+    //getUrl(shareText);
 
-    getUrl(shareText);
+    getTweet(getUrl(shareText))
 
 });
 
@@ -76,6 +80,22 @@ function getUrl(message){
 function populateTweet(url){
     tweetUrl.href=url;
 
+}
+
+function getTweet(url){
+    var urlx = 'https://api.twitter.com/1/statuses/oembed.json?url='+url;
+
+    $.ajax({
+        url: urlx,
+        type: 'GET',
+        jsonpCallback: 'tweetCallback',
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        success: function (result) {
+            text.innerHTML = result.html;
+            output.innerHTML = splitLines(rot13me(text.innerText));
+        }
+    });
 }
 
 function populateToot(url){
