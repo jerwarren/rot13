@@ -3,6 +3,7 @@ if('serviceWorker' in navigator) {
 }
 
 const tweetUrl = document.querySelector('#tweetUrl');
+const tootUrl = document.querySelector('.mastodon-embed');
 
 window.addEventListener('DOMContentLoaded', () => {
     const parsedUrl = new URL(window.location);
@@ -14,9 +15,9 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#text').innerHTML = shareText;
 
     if (shareText !== null)
-        document.querySelector('#output').innerHTML = rot13me(shareText);
+        document.querySelector('#output').innerHTML = splitLines(rot13me(shareText));
 
-        populateTweet(getUrl(shareText));
+    getUrl(shareText);
 
 });
 
@@ -33,6 +34,16 @@ function reShare(message){
     }
 }
 
+function splitLines(message){
+    newMessage = message.split(".").join(".<br><br>");
+    newMessage = newMessage.split(":").join(":<br><br>");
+    newMessage = newMessage.split("?").join("?<br><br>");
+    newMessage = newMessage.split(",").join(",<br><br>");
+    newMessage = newMessage.split(";").join(";<br><br>");
+
+    return newMessage;
+}
+
 function rot13me(message){
     pattern = /(https*:\/\/[^\s]*)/;
     newMessage = message.replace(pattern,'');
@@ -44,11 +55,30 @@ function rot13me(message){
 
 function getUrl(message){
     pattern = /(https*:\/\/[^\s]*)/;
-    newMessage = message.match(pattern);
-    return newMessage[1];
+    links = message.match(pattern);
+
+    twitterPattern = /(https:\/\/twitter.com).*/;
+    mastoPattern = /(https*:\/\/[^\/]*\/\@[^\/]*\/[0-9]*)/;
+    console.log(links[1])
+    if (links[1].match(twitterPattern)){
+        console.log("twitter");
+        populateTweet(links[1]);
+    }
+
+    if (links[1].match(mastoPattern)){
+        console.log("mastodon");
+        populateToot(links[1]);
+    }
+
+    return links[1];
 }
 
 function populateTweet(url){
     tweetUrl.href=url;
 
+}
+
+function populateToot(url){
+    tootUrl.src=url+"/embed";
+    tootUrl.classList.add("show");
 }

@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="share cleaner">
-        <title>rot13 tweet</title>
+        <title>rot13 reader</title>
         <link rel="manifest" href="manifest.json?foo">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#000000">
@@ -33,7 +33,7 @@
             .label {
                 margin-left: 0px;
                 margin-right: 0px;
-                maegin-bottom: 0;
+                margin-bottom: 10px;
                 font-size: 16px;
                 font-weight: 700;
                 height: auto;
@@ -61,10 +61,26 @@
                 font-style: italic;
             }
 
+            .mastodon-embed {
+                width: 100%;
+                border-radius: 5px;
+                border: 1px solid rgba(255,255,255,0.5)!important;
+            }
+
+            .mastodon-embed, .twitter-tweet {
+                display: none;
+            }
+
+            .mastodon-embed.show, .twitter-tweet.show {
+                display: block;
+            }
+
         </style>
         <h1>
             <span class="fancy">rot13</span>&nbsp;<span class="tweet">Tweet</span>
         </h1>
+
+        <iframe src="" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.social/embed.js" async="async"></script>
         <blockquote class="twitter-tweet" data-conversation="none" data-dnt="true" data-theme="dark">
             <p lang="en" dir="ltr"></p><a id="tweetUrl" href=""></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
         </script>

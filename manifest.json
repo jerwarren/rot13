@@ -1,7 +1,7 @@
 
 {
-  "name": "rot13 tweet",
-  "short_name": "rot13 tweet",
+  "name": "rot13 reader",
+  "short_name": "rot13 reader",
   "start_url": "/rot13/share.html",
   "display": "standalone",
   "theme_color": "#000000",
