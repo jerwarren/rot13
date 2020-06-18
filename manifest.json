@@ -2,7 +2,7 @@
 {
   "name": "rot13 reader",
   "short_name": "rot13 reader",
-  "start_url": "/rot13/share.html",
+  "start_url": "/rot13-reader/share.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color":"#000000",
@@ -14,7 +14,7 @@
     }
   ],
   "share_target": {
-    "action": "/rot13/share.html",
+    "action": "/rot13-reader/share.html",
     "method": "GET",
     "params": {
       "text": "text"
